@@ -50,6 +50,7 @@ extension SmallViewController {
 }
 
 extension SmallViewController: BigPlayerSourceProtocol {
+    
     var originatingFrameInWindow: CGRect {
         return view.convert(view.frame, to: nil)
     }

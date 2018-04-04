@@ -5,7 +5,7 @@
 //  Created by ljb48229 on 2018/4/4.
 //  Copyright © 2018年 ljb48229. All rights reserved.
 //
-https://blog.csdn.net/kmyhy/article/details/79670878
+
 
 import UIKit
 
@@ -17,7 +17,7 @@ protocol BigPlayerSourceProtocol: class {
 class BigViewController: UIViewController {
     
     //动画时间
-    let primaryDuration = 5.0
+    let primaryDuration = 0.5
     let backingImageEdgeInset: CGFloat = 15.0
     let cardCornerRadius: CGFloat = 10
     var currentSong: Song?
@@ -54,6 +54,16 @@ class BigViewController: UIViewController {
         return .lightContent
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        //接管状态栏属性
+        modalPresentationCapturesStatusBarAppearance = true
+        modalPresentationStyle = .overFullScreen //这句话不写回来的时候有问题！！！！
+        /*
+         简单说就是不隐藏presenting VC，用于presented VC的view有透明的情况使用。那么这个和之前的有什么区别呢，区别主要在亮点：1.背景不会变深色（但还是会屏蔽触控）2.presented VC view的大小和presenting VC一样大时（即完全遮挡），前面几个选项会直接隐藏presenting VC，而overFullScreen不考虑遮挡问题，无条件显示presenting VC。这就对presented VC大小和presenting VC一样大但有透明的情况适用。
+         */
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -76,6 +86,8 @@ class BigViewController: UIViewController {
         animateImageLayerIn()
         animateCoverImageIn()
     }
+}
+extension BigViewController {
     
     @IBAction func dismissAction(_ sender: Any) {
         animateBackingImageOut()
@@ -84,8 +96,6 @@ class BigViewController: UIViewController {
             self.dismiss(animated: false, completion: nil)
         }
     }
-    
-    
 }
 
 // MARK: - 背景图片动画

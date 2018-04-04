@@ -19,6 +19,8 @@
 		3F24793620737ED1004BE733 /* 5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F24793120737ED1004BE733 /* 5.jpeg */; };
 		3F9B3AE920739F5E006B19F9 /* CannedSongs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F24793720737EE4004BE733 /* CannedSongs.plist */; };
 		3F9B3AEB2073A278006B19F9 /* SmallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B3AEA2073A278006B19F9 /* SmallViewController.swift */; };
+		3F9B3AED2074BE73006B19F9 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B3AEC2074BE73006B19F9 /* UIView+Snapshot.swift */; };
+		3F9B3AEF2074BF1E006B19F9 /* BigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B3AEE2074BF1E006B19F9 /* BigViewController.swift */; };
 		3FA87F3C207382080041777C /* SongCollectionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA87F3B207382080041777C /* SongCollectionDatasource.swift */; };
 		3FA87F3E2073824F0041777C /* DataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA87F3D2073824F0041777C /* DataStack.swift */; };
 		3FA87F41207382740041777C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA87F40207382740041777C /* Song.swift */; };
@@ -42,6 +44,8 @@
 		3F24793120737ED1004BE733 /* 5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpeg; sourceTree = "<group>"; };
 		3F24793720737EE4004BE733 /* CannedSongs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CannedSongs.plist; sourceTree = "<group>"; };
 		3F9B3AEA2073A278006B19F9 /* SmallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallViewController.swift; sourceTree = "<group>"; };
+		3F9B3AEC2074BE73006B19F9 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
+		3F9B3AEE2074BF1E006B19F9 /* BigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigViewController.swift; sourceTree = "<group>"; };
 		3FA87F3B207382080041777C /* SongCollectionDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCollectionDatasource.swift; sourceTree = "<group>"; };
 		3FA87F3D2073824F0041777C /* DataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStack.swift; sourceTree = "<group>"; };
 		3FA87F40207382740041777C /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				3F24791B207372A0004BE733 /* Main.storyboard */,
 				3F24792A20737B63004BE733 /* SongViewController.swift */,
 				3F9B3AEA2073A278006B19F9 /* SmallViewController.swift */,
+				3F9B3AEE2074BF1E006B19F9 /* BigViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				3FA87F4820739C460041777C /* Song+imageLoad.swift */,
+				3F9B3AEC2074BE73006B19F9 /* UIView+Snapshot.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -221,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F9B3AEF2074BF1E006B19F9 /* BigViewController.swift in Sources */,
 				3FA87F3C207382080041777C /* SongCollectionDatasource.swift in Sources */,
 				3F247918207372A0004BE733 /* AppDelegate.swift in Sources */,
 				3FA87F43207398AF0041777C /* SongBuilder.swift in Sources */,
@@ -229,6 +236,7 @@
 				3FA87F4920739C460041777C /* Song+imageLoad.swift in Sources */,
 				3FA87F3E2073824F0041777C /* DataStack.swift in Sources */,
 				3F24792B20737B63004BE733 /* SongViewController.swift in Sources */,
+				3F9B3AED2074BE73006B19F9 /* UIView+Snapshot.swift in Sources */,
 				3FA87F41207382740041777C /* Song.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

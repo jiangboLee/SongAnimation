@@ -34,7 +34,18 @@ class SongViewController: UIViewController {
 
 extension SongViewController: SmallPlayerDelegate {
     func expandSong(song: Song) {
+        guard let bigVC = storyboard?.instantiateViewController(withIdentifier: "BigViewController") as? BigViewController else {
+            assertionFailure("找不到控制器")
+            return
+        }
         
+        bigVC.backingImage = view.makeSnapshot()
+        bigVC.currentSong = song
+        bigVC.sourceView = smallPlayer
+        if let tabBar = tabBarController?.tabBar {
+            bigVC.tabBarImage = tabBar.makeSnapshot()
+        }
+        present(bigVC, animated: false, completion: nil)
     }
 }
 

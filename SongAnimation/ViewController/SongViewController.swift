@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SongViewController: UIViewController {
+class SongViewController: UIViewController, SongSubscriber {
 
     var datasourse: SongCollectionDatasource!
     var currentSong: Song?

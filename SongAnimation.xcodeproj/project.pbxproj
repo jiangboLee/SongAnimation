@@ -27,6 +27,8 @@
 		3FA87F43207398AF0041777C /* SongBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA87F42207398AF0041777C /* SongBuilder.swift */; };
 		3FA87F4620739AD10041777C /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA87F4520739AD10041777C /* SongCell.swift */; };
 		3FA87F4920739C460041777C /* Song+imageLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA87F4820739C460041777C /* Song+imageLoad.swift */; };
+		B77C652D2075192E007B96B6 /* SongPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C652C2075192E007B96B6 /* SongPlayViewController.swift */; };
+		B77C652F2075DE7A007B96B6 /* SongSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C652E2075DE7A007B96B6 /* SongSubscriber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		3FA87F42207398AF0041777C /* SongBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongBuilder.swift; sourceTree = "<group>"; };
 		3FA87F4520739AD10041777C /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		3FA87F4820739C460041777C /* Song+imageLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+imageLoad.swift"; sourceTree = "<group>"; };
+		B77C652C2075192E007B96B6 /* SongPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayViewController.swift; sourceTree = "<group>"; };
+		B77C652E2075DE7A007B96B6 /* SongSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSubscriber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 				3F24792A20737B63004BE733 /* SongViewController.swift */,
 				3F9B3AEA2073A278006B19F9 /* SmallViewController.swift */,
 				3F9B3AEE2074BF1E006B19F9 /* BigViewController.swift */,
+				B77C652C2075192E007B96B6 /* SongPlayViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				3FA87F40207382740041777C /* Song.swift */,
+				B77C652E2075DE7A007B96B6 /* SongSubscriber.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F9B3AEF2074BF1E006B19F9 /* BigViewController.swift in Sources */,
+				B77C652F2075DE7A007B96B6 /* SongSubscriber.swift in Sources */,
 				3FA87F3C207382080041777C /* SongCollectionDatasource.swift in Sources */,
 				3F247918207372A0004BE733 /* AppDelegate.swift in Sources */,
 				3FA87F43207398AF0041777C /* SongBuilder.swift in Sources */,
@@ -238,6 +245,7 @@
 				3F24792B20737B63004BE733 /* SongViewController.swift in Sources */,
 				3F9B3AED2074BE73006B19F9 /* UIView+Snapshot.swift in Sources */,
 				3FA87F41207382740041777C /* Song.swift in Sources */,
+				B77C652D2075192E007B96B6 /* SongPlayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

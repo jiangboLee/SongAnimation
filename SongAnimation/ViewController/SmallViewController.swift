@@ -12,7 +12,7 @@ protocol SmallPlayerDelegate: class {
     func expandSong(song: Song)
 }
 
-class SmallViewController: UIViewController {
+class SmallViewController: UIViewController, SongSubscriber {
 
     var currentSong: Song?
     weak var delegate: SmallPlayerDelegate?

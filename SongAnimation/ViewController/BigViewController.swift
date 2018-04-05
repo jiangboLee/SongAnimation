@@ -14,7 +14,7 @@ protocol BigPlayerSourceProtocol: class {
     var originatingCoverImageView: UIImageView { get }
 }
 
-class BigViewController: UIViewController {
+class BigViewController: UIViewController, SongSubscriber {
     
     //动画时间
     let primaryDuration = 0.5
@@ -45,10 +45,14 @@ class BigViewController: UIViewController {
     @IBOutlet weak var coverImageHeight: NSLayoutConstraint!
     //cover image constraints
     @IBOutlet weak var coverImageContainerTopInset: NSLayoutConstraint!
+    //歌曲详情
+    @IBOutlet weak var lowerModuleTopConstraint: NSLayoutConstraint!
     
-    
-    
+    //tabbarimage
     var tabBarImage: UIImage?
+    @IBOutlet weak var bottomSectionHeight: NSLayoutConstraint!
+    @IBOutlet weak var bottomSectionLowerConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomSectionImageView: UIImageView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -78,13 +82,23 @@ class BigViewController: UIViewController {
         configureImageLayerInStartPosition()
         coverArtImage.image = sourceView.originatingCoverImageView.image
         configureCoverImageInStartPosition()
-        stretchySkirt.backgroundColor = .white
+        stretchySkirt.backgroundColor = .white //避免封面图片和下面的 songPlayControl 之间显示出间隙
+        configureLowerModuleInStartPosition()
+        configureBottomSection()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateBackingImageIn()
         animateImageLayerIn()
         animateCoverImageIn()
+        animateLowerModuleIn()
+        animateBottomSectionOut()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SongSubscriber {
+            destination.currentSong = currentSong
+        }
     }
 }
 extension BigViewController {
@@ -95,6 +109,8 @@ extension BigViewController {
         animateImageLayerOut { _ in
             self.dismiss(animated: false, completion: nil)
         }
+        animateLowerModuleOut()
+        animateBottomSectionIn()
     }
 }
 
@@ -218,8 +234,66 @@ extension BigViewController {
     }
 }
 
+// MARK: - 歌曲详情动画
+extension BigViewController {
+    
+    private var lowerModuleInsetForOutPosition: CGFloat {
+        let bounds = view.bounds
+        return bounds.height - bounds.width
+    }
+    
+    func configureLowerModuleInStartPosition() {
+        lowerModuleTopConstraint.constant = lowerModuleInsetForOutPosition
+    }
+    
+    func animateLowerModule(isPresenting: Bool) {
+        let topInset = isPresenting ? 0 : lowerModuleInsetForOutPosition
+        UIView.animate(withDuration: primaryDuration , delay: 0 , options: [.curveEaseIn], animations: {
+            self.lowerModuleTopConstraint.constant = topInset
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func animateLowerModuleOut() {
+        animateLowerModule(isPresenting: false)
+    }
+    
+    func animateLowerModuleIn() {
+        animateLowerModule(isPresenting: true)
+    }
+}
 
-
+// MARK: - tab bar animation
+extension BigViewController {
+    
+    func configureBottomSection() {
+        if let image = tabBarImage {
+            bottomSectionHeight.constant = image.size.height
+            bottomSectionImageView.image = image
+        } else {
+            bottomSectionHeight.constant = 0
+        }
+        view.layoutIfNeeded()
+    }
+    //将 image view 移到屏幕底部以下
+    func animateBottomSectionOut() {
+        if let image = tabBarImage {
+            UIView.animate(withDuration: primaryDuration / 2.0) {
+                self.bottomSectionLowerConstraint.constant = -image.size.height
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    //将 image view 移到正常位置
+    func animateBottomSectionIn() {
+        if tabBarImage != nil {
+            UIView.animate(withDuration: primaryDuration / 2.0) {
+                self.bottomSectionLowerConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+}
 
 
 

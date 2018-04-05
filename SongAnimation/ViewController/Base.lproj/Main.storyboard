@@ -119,7 +119,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ek5-hz-TrB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="music" selectedImage="music-playlist" id="hc6-7m-fYd"/>
+                    <tabBarItem key="tabBarItem" title="music" image="music-playlist" selectedImage="music-playlist" id="hc6-7m-fYd"/>
                     <connections>
                         <outlet property="collectionView" destination="ckl-SV-OwN" id="d78-Eq-cQL"/>
                     </connections>
@@ -143,7 +143,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCK-qr-5Ma">
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCK-qr-5Ma">
                                 <rect key="frame" x="0.0" y="15" width="375" height="652"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b51-3j-Yu6">
